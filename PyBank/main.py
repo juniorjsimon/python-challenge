@@ -1,8 +1,10 @@
+# import module
 import os
 import csv
 
 # file path
 csvpath = os.path.join('Resources', 'budget_data.csv')
+
 
 # variables 
 total_months = 0
@@ -30,7 +32,7 @@ with open(csvpath, newline='') as csvfile:
     print(f"Financial Analysis")
     print(f"---------------------------") 
     
-    #calculate total number oof months, Net Amount profits and set the variables for the rows
+    # calculate total number oof months, Net Amount profits and set the variables for the rows
     previous_row = int(row[1])
     total_months = total_months + 1
     net_amount = net_amount + int(row[1])
@@ -73,7 +75,7 @@ with open(csvpath, newline='') as csvfile:
 
  
   
-# Print the output
+# Print the output analysis
 print(f"Total Months: {total_months}")
 print(f"Total: $ {net_amount}")
 print(f"Average Change: $ {average_change:.2f}")
@@ -81,7 +83,7 @@ print(f"Greatest Increase in Profits: {greatest_increase_month} (${highest})")
 print(f"Greatest Decrease in Profits: {greatest_decrease_month} (${lowest})")
 
 # Specify the file to write on
-output_file = os.path.join('Results.txt')
+output_file = os.path.join('PyBank_Results.txt')
 
 # Open and write to file
 with open(output_file, 'w',) as txtfile:
